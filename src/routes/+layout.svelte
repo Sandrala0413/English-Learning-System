@@ -1,13 +1,16 @@
 <script>
 	import '../app.css';
+	import {onMount} from 'svelte';
+	import Header from '$lib/header/Header.svelte';
 	// let { children } = $props();
+	let load = false;
+
+	onMount(()=>{
+		load = true;
+	});
+
 </script>
 
-<!-- <header>
-	<ul>
-		<li><a href="/test">test</a></li>
-	</ul>
-</header> -->
 
 <style>
   :global(body) {
@@ -17,6 +20,9 @@
   }
 </style>
 
+{#if load}
+	<Header />
+{/if}
 <slot />
 
 <!-- {@render children()} -->
