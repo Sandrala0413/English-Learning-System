@@ -1,4 +1,6 @@
 <script>
+    import SideMenu from "$lib/sideMenu/SideMenu.svelte";
+    
     // export let words;
     export let data; // 注意：這裡使用 'data'，它包含 load 函數返回的所有屬性
     let promise = data.words; // 將 words 放入 promise 變數中
@@ -47,3 +49,6 @@
   <button on:click={addWord}>新增</button>
 </div>
   
+
+<SideMenu 
+/>
