@@ -1,9 +1,8 @@
 <script>
     import SideMenu from "$lib/sideMenu/SideMenu.svelte";
-    
-    // export let words;
-    export let data; // 注意：這裡使用 'data'，它包含 load 函數返回的所有屬性
-    let promise = data.words; // 將 words 放入 promise 變數中
+    import Card from "$lib/card/Card.svelte";
+
+    export let data; // data包含 load 函數返回的所有屬性
     // console.log("顯示的words:", data);
 
     let word = "";
@@ -24,19 +23,6 @@
       location.reload(); // 重新載入頁面
     }
 </script>
-  
-<h1>單字列表</h1>
-{#await promise}
-    <p>載入中...</p>
-{:then words}
-    <ul>
-        {#each words as w}
-            <li>{w.word} - {w.define}</li>
-        {/each}
-    </ul>
-{:catch error}
-    <p>載入失敗：{error.message}</p>
-{/await}
 
 <div>
   <h2>新增單字</h2>
