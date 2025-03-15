@@ -1,10 +1,10 @@
 <script>
     import SideMenu from "$lib/sideMenu/SideMenu.svelte";
-    
-    // export let words;
+    import { addBox, inputBox, addBtn, vocListBox, card } from "./Voabulary.style.js";
+    import Card from "$lib/card/Card.svelte";
+    import RightList from "./RightList.svelte";
+
     export let data; // 注意：這裡使用 'data'，它包含 load 函數返回的所有屬性
-    let promise = data.words; // 將 words 放入 promise 變數中
-    // console.log("顯示的words:", data);
 
     let word = "";
     let speech = "";
@@ -24,31 +24,40 @@
       location.reload(); // 重新載入頁面
     }
 </script>
-  
-<h1>單字列表</h1>
-{#await promise}
-    <p>載入中...</p>
-{:then words}
-    <ul>
-        {#each words as w}
-            <li>{w.word} - {w.define}</li>
-        {/each}
-    </ul>
-{:catch error}
-    <p>載入失敗：{error.message}</p>
-{/await}
 
-<div>
-  <h2>新增單字</h2>
-  <input bind:value={word} placeholder="單字" />
-  <input bind:value={speech} placeholder="詞性" />
-  <input bind:value={audio_src} placeholder="發音音檔" />
-  <input bind:value={pronounce} placeholder="kk音標" />
-  <input bind:value={define} placeholder="單字解釋" />
-  <input bind:value={sentence} placeholder="句子"/>
-  <button on:click={addWord}>新增</button>
+
+
+<div class={vocListBox}>
+  <div class={addBox}>
+    <!-- <h2>新增單字</h2> -->
+    <input class={inputBox} bind:value={word} placeholder="單字" />
+    <input class={inputBox} bind:value={speech} placeholder="詞性" />
+    <!-- <input class={inputBox} bind:value={audio_src} placeholder="發音音檔" /> -->
+    <input class={inputBox} bind:value={pronounce} placeholder="kk音標" />
+    <input class={inputBox} bind:value={define} placeholder="單字解釋" />
+    <!-- <input class={inputBox} bind:value={sentence} placeholder="句子"/> -->
+    <button on:click={addWord} class={addBtn}>新增</button>
+  </div>
+
+{#each data.words as w}
+  <Card
+    word = {w.word}
+    speech = {w.speech}
+    audioSrc = {w.audio_src}
+    pronounce = {w.pronounce}
+    define = {w.define}
+    sentence = {w.sentence}
+    customCardStyle = "margin: 0; flex-direction: row; gap: 100px; width: 65vw;"
+    customVocBox = "width: 120px;"
+  />
+{/each}
+
+
 </div>
-  
 
-<SideMenu 
+<SideMenu />
+
+<RightList 
+  voc = {data.words}
 />
+
