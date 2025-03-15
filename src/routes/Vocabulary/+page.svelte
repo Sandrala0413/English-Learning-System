@@ -26,7 +26,6 @@
 </script>
 
 
-
 <div class={vocListBox}>
   <div class={addBox}>
     <!-- <h2>新增單字</h2> -->
@@ -58,6 +57,8 @@
 <SideMenu />
 
 <RightList 
-  voc = {data.words}
+  voc = {data}
 />
+
+
 
