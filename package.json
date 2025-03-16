@@ -40,6 +40,8 @@
 	"dependencies": {
 		"@prisma/client": "^6.5.0",
 		"@stitches/core": "^1.2.8",
-		"mysql2": "^3.13.0"
+		"html5-qrcode": "^2.3.8",
+		"mysql2": "^3.13.0",
+		"qrcode": "^1.5.4"
 	}
 }
