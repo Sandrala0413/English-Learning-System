@@ -12,4 +12,6 @@
     pronounce = {word.pronounce}
     define = {word.define}
     sentence = {word.sentence}
+    customCardStyle = "position: relative;"
+    customStar = "position: absolute; top: 15px; right: 15px;"
 />

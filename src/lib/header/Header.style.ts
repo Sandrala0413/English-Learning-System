@@ -12,6 +12,7 @@ export const headerBar = css({
     justifyContent: "flex-start",
     alignItems: "center",
     padding: "30px",
+    marginLeft: "25px"
 })
 
 export const logoImg = css({
@@ -31,10 +32,56 @@ export const searchBar = css({
 
 export const logInBtn = css({
     display: "inline-flex",
-    // marginLeft: "auto"
-    flexGrow: 1, // 讓它佔據剩餘空間
+    marginLeft: "auto",
+    // flexGrow: 1,
     justifyContent: "flex-end",
-    marginRight: "5vw"
+    marginRight: "5vw",
+    // borderRadius: "5px",
+    // background: " #c5d5fa",
+    // fontSize: "20px",
+    // color: "white",
+    // padding: "5px",
+    // '&:hover':{
+    //     background: " #adc2f3"
+    // }
+    padding: '0.5em 1em',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold',
+    letterSpacing: '5px',
+    textTransform: 'uppercase',
+    cursor: 'pointer',
+    color: 'rgba(255, 255, 255, 0.9)',
+    transition: 'all 1000ms',
+    fontSize: '15px',
+    position: 'relative',
+    overflow: 'hidden',
+    outline: '2px solidrgba(255, 255, 255, 0.9)',
+  
+    '&:hover': {
+      color: '#ffffff',
+      transform: 'scale(1.1)',
+      outline: '2px solidrgb(103, 157, 219)',
+      boxShadow: '4px 5px 17px -4px #8888ba',
+    },
+  
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      left: '-50px',
+      top: '0',
+      width: '0',
+      height: '100%',
+      backgroundColor: '#c5d5f8',
+      transform: 'skewX(45deg)',
+      zIndex: '-1',
+      transition: 'width 800ms',
+    },
+  
+    '&:hover::before': {
+      width: '200%',
+    },
+
 })
 
 export const logInPage = css({
@@ -114,3 +161,4 @@ export const logInPageBtn = css({
         width: "9em",
     }
 })
+

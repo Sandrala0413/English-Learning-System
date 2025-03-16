@@ -45,5 +45,5 @@ model FavoriteWords {
   user   Account @relation(fields: [userId], references: [id], onDelete: Cascade)
   word   Word    @relation(fields: [wordId], references: [id], onDelete: Cascade)
 
-  @@id([userId, wordId]) // 確保 user_id 和 word_id 組合唯一
+  @@id([userId, wordId]) 
 }

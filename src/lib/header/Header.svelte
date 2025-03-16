@@ -13,6 +13,7 @@ function handleKeyDown(event: KeyboardEvent) {
 
 
 let showLogin = false;
+let loggedIn = false;
 
 function logInPageToggle() {
     showLogin = !showLogin;
@@ -26,7 +27,6 @@ async function addAccount() {
         return;
     }
 
-    console.log("發送請求: ", { username, password });
     try {
         const response = await fetch("/api/accounts", {
             method: "POST",
@@ -37,11 +37,16 @@ async function addAccount() {
         const data = await response.json();
 
         console.log("後端回應: ", data);
-        if (response.status === 201) {
+        if (response.status === 200) {
+            alert("登入成功");
+            loggedIn = true;
+            showLogin = false;
+        } else if (response.status === 201) {
             alert("註冊成功");
-            showLogin = false; // Hide login page
+            loggedIn = true;
+            showLogin = false;
         } else {
-            alert(data.error || "註冊失敗");
+            alert(data.error || "登入/註冊失敗");
         }
         
     } catch (error) {
@@ -49,6 +54,13 @@ async function addAccount() {
         alert("發生錯誤，請稍後再試");
     }
 
+}
+
+function logout() {
+    loggedIn = false;
+    username = "";
+    password = "";
+    alert("已登出");
 }
 </script>
 
@@ -60,5 +72,36 @@ async function addAccount() {
         <input class={searchBar} type="text" bind:value={targetWord} placeholder="搜尋..." on:keydown={handleKeyDown}>
         <!-- <button on:click={}><i class="fa-solid fa-magnifying-glass"></i></button> -->
     </form>
-    <p class={logInBtn} on:click={logInPageToggle}>登入</p>
+    <div class={logInBtn}>
+        {#if loggedIn}
+        <p  on:click={logout}>登出</p>
+        {:else}
+        <p on:click={logInPageToggle}>登入</p>
+        {/if}
+    </div>
+    
+    
 </div>
+
+<!-- {#if showLogin}
+<div class={logInPage}>
+    <div class={logInContainer} on:click|stopPropagation>
+        <i class="fa-solid fa-paw {userIcon}"></i>
+        <input class={inputBox} bind:value={username} type="text" placeholder="帳號">
+        <input class={inputBox} bind:value={password} type="password" placeholder="密碼">
+        <button class={logInPageBtn} on:click={addAccount}>登入</button>
+    </div>
+    
+</div>
+{/if} -->
+
+{#if showLogin}
+    <div class={logInPage} on:click={logInPageToggle}>
+        <div class={logInContainer} on:click|stopPropagation>
+            <i class="fa-solid fa-paw {userIcon}"></i>
+            <input class={inputBox} bind:value={username} type="text" placeholder="帳號">
+            <input class={inputBox} bind:value={password} type="password" placeholder="密碼">
+            <button class={logInPageBtn} on:click={addAccount}>登入</button>
+        </div>
+    </div>
+{/if}

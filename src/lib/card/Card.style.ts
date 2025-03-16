@@ -60,3 +60,12 @@ export const sentenceCss = css({
     fontSize: "20px",
     padding: "5px"
 })
+
+export const starIcon = css({
+    display: "inline-flex",
+    marginLeft: "auto",
+    justifyContent: "flex-end",
+    color: " rgb(243, 213, 93)",
+    fontSize: "25px",
+
+})
