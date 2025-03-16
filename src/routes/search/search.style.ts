@@ -4,8 +4,6 @@ export const notFindBox = css ({
     display:"flex",
     flexDirection: "column",
     alignItems: "center",
-    // fontWeight: "800",
-    // fontSize: "30px",
     gap: "10px"
 })
 
