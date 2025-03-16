@@ -17,6 +17,7 @@
     background: linear-gradient(135deg, #c5d5fa, #c3dc99, #fad0c4);
     height: 100vh;
     margin: 0;
+	background-attachment: fixed;
   }
 </style>
 
