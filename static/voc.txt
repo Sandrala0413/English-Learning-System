@@ -1,0 +1,25 @@
+word,,define,pronounce,sentence,speech,capital
+Credential,,證書,/kr??d?n??l/,"She received a credential from the university.",n.,Credential
+Hiring committee,,雇用委員會,/?ha?r?? k??m?ti/,"The hiring committee will review all applications.",phr.,Hiring Committee
+On...occasion,,偶爾,/?n ... ??ke???n/,"On rare occasions, he visits his hometown.",phr.,On...Occasion
+Overqualified,,條件太好的,/?o?v??kw??l?fa?d/,"She was rejected for being overqualified for the job.",adj.,Overqualified
+Screening,,篩檢；審查,/?skri?n??/,"The screening process takes about two weeks.",n.,Screening
+Oriented,,以...為方向的;以...為目的的,/???r??nt?d/,"He is goal-oriented in his career.",adj.,Oriented
+Pertaining to,,與...有關,/p??te?n?? tu/,"The rules pertaining to safety must be followed.",phr.,Pertaining To
+Questionably,,可疑地,/?kw?s??n?bli/,"He acted questionably during the meeting.",adv.,Questionably
+Replenish,,補充，再裝滿,/r??pl?n??/,"She replenished the water bottles before the trip.",v.,Replenish
+Stellar,,主要的 顯著的 星形的,/?st?l?/,"She gave a stellar performance in the play.",adj.,Stellar
+Versatile,,多才多藝的；多用途的,/?v??s?t?l/,"He is a versatile musician.",adj.,Versatile
+Adept,,熟練的、內行的,/??d?pt/,"She is adept at solving complex problems.",adj.,Adept
+Adopt,,採納、收養,/??d??pt/,"They decided to adopt a child.",v.,Adopt
+Adapt,,使適應、改編,/??d?pt/,"He quickly adapted to the new environment.",v.,Adapt
+Commensurate,,同樣大小的、相稱的,/k??m?ns?r?t/,"Salary will be commensurate with experience.",adj.,Commensurate
+Computer literate,,懂得使用電腦的,/k?m?pju?t? ?l?t?r?t/,"All employees must be computer literate.",adj.,Computer Literate
+Eagerness,,熱心,/?i???n?s/,"His eagerness to learn impressed his teacher.",n.,Eagerness
+Interpersonal skills,,人際關係能力,/??nt??p??s?n?l sk?lz/,"Good interpersonal skills are essential for this role.",phr.,Interpersonal Skills
+Preeminent,,卓越的、顯著的,/pri??m?n?nt/,"She is a preeminent scientist in her field.",adj.,Preeminent
+Preliminary,,預備的、初步的,/pr??l?m?n?ri/,"The preliminary results look promising.",adj.,Preliminary
+Prerequisite,,必要的,/pri?r?kw?z?t/,"Basic math is a prerequisite for this course.",adj.,Prerequisite
+Prerequisite,,必要條件,/pri?r?kw?z?t/,"A degree is a prerequisite for this job.",n.,Prerequisite
+Probationer,,試用人員,/pro??be???n?/,"The probationer will be evaluated after three months.",n.,Probationer
+Sternly,,嚴格地,/?st??nli/,"The teacher spoke sternly to the misbehaving students.",adv.,Sternly

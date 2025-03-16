@@ -1,0 +1,15 @@
+import { css } from "../../stitches.config";
+
+export const notFindBox = css ({
+    display:"flex",
+    flexDirection: "column",
+    alignItems: "center",
+    // fontWeight: "800",
+    // fontSize: "30px",
+    gap: "10px"
+})
+
+export const notFindWord = css ({
+    fontWeight: "800",
+    fontSize: "50px"
+})

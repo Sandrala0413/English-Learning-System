@@ -18,31 +18,11 @@ export const card = css({
     }
 })
 
-// export const wordCss = css({
-//     fontWeight: "800",
-//     fontSize: "30px",
-
-// })
-
-export const inputBox = css({
-
-})
 
 export const speechCss = css({
     fontStyle: "italic",
     
 })
-
-// export const pronounceBox = css({
-//     display: "flex",
-//     alignItems: "center",
-//     padding: "5px",
-// })
-
-// export const pronounceCss = css({
-//     padding: "7px"
-
-// })
 
 export const defineCss = css({
     fontSize: "20px",
@@ -60,10 +40,6 @@ export const defineBox = css({
     margin: "5px"
 })
 
-// export const sentenceCss = css({
-//     fontSize: "20px",
-//     padding: "5px"
-// })
 
 export const buttonBox = css({
     display: "flex",
