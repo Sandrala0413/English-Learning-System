@@ -18,31 +18,11 @@ export const card = css({
     }
 })
 
-// export const wordCss = css({
-//     fontWeight: "800",
-//     fontSize: "30px",
-
-// })
-
-export const inputBox = css({
-
-})
 
 export const speechCss = css({
     fontStyle: "italic",
     
 })
-
-// export const pronounceBox = css({
-//     display: "flex",
-//     alignItems: "center",
-//     padding: "5px",
-// })
-
-// export const pronounceCss = css({
-//     padding: "7px"
-
-// })
 
 export const defineCss = css({
     fontSize: "20px",
@@ -60,12 +40,43 @@ export const defineBox = css({
     margin: "5px"
 })
 
-// export const sentenceCss = css({
-//     fontSize: "20px",
-//     padding: "5px"
-// })
 
 export const buttonBox = css({
     display: "flex",
     justifyContent: "space-around"
+})
+
+export const inputBox = css({
+    borderRadius: "7px",
+})
+
+export const Btn = css({
+    width: "5em",
+    // marginLeft: "10px",
+    height: "2em",
+    borderRadius: "30em",
+    fontSize: "15px",
+    color: "rgb(251, 250, 251)",
+    fontWeight: "700",
+    border: "none",
+    position: "relative",
+    overflow: "hidden",
+    zIndex: "1",
+    boxShadow: "6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff",
+    '&::before': {
+        content: "''",
+        width: "0",
+        height: "3em",
+        borderRadius: "30em",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        backgroundImage: "linear-gradient(to right, #c5d5fa, #fad0c4 100%)",
+        transition: ".5s ease",
+        display: "block",
+        zIndex: "-1",
+    },
+    '&:hover::before': {
+        width: "9em",
+    }
 })

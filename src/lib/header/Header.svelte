@@ -1,6 +1,16 @@
-<script>
+<script lang="ts">
 import { headerBtn, headerBar, logoImg, searchBar, logInBtn, logInPage, 
     logInContainer, inputBox, userIcon, logInPageBtn } from "./Header.style";
+import { goto } from "$app/navigation";
+export let targetWord = "";
+
+function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === "Enter" && targetWord.trim() !== "") {
+        event.preventDefault(); // 阻止表單預設提交行為
+        goto(`/search?q=${encodeURIComponent(targetWord)}`);
+    }
+}
+
 
 let showLogin = false;
 
@@ -43,22 +53,12 @@ async function addAccount() {
 </script>
 
 <div class={headerBar}>
-    <a href="/"><img class={logoImg} src="https://i.imgur.com/MPEsTPo.jpg"></a>
+    <a href="/"><img class={logoImg} src="https://i.imgur.com/MPEsTPo.jpg" alt="logo"></a>
     <a class={headerBtn} href="/Vocabulary">單字簿</a>
     <a class={headerBtn} href="/Quiz">測驗</a>
     <form >
-        <input class={searchBar} type="text" placeholder="搜尋...">
+        <input class={searchBar} type="text" bind:value={targetWord} placeholder="搜尋..." on:keydown={handleKeyDown}>
+        <!-- <button on:click={}><i class="fa-solid fa-magnifying-glass"></i></button> -->
     </form>
     <p class={logInBtn} on:click={logInPageToggle}>登入</p>
 </div>
-
-{#if showLogin}
-    <div class={logInPage} on:click={logInPageToggle}>
-        <div class={logInContainer} on:click|stopPropagation>
-            <i class="fa-solid fa-paw {userIcon}"></i>
-            <input class={inputBox} type="text" bind:value={username} placeholder="帳號">
-            <input class={inputBox} type="password" bind:value={password} placeholder="密碼">
-            <button class={logInPageBtn} on:click={addAccount}>登入</button>
-        </div>
-    </div>
-{/if}
