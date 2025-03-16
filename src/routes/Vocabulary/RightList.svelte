@@ -1,21 +1,14 @@
 <script>
-    import { onMount } from "svelte";
-    // let voc = "";
-    export let voc;
-    // console.log("載入的1", voc);
 
-    // onMount(async () => {
-    //     const res = await fetch('/api/words');
-    //     const data = await res.json();
-    //     voc = data.words;  // 將資料存儲在 `words` 中
-    // });
+    export let voc;
+
 </script>
 
 <style>
     .listBox{
         position: fixed;   /* 固定位置 */
-        right: 5%;          /* 距離右側 0px */
-        top: 20%;            
+        right: 5vw;          /* 距離右側 0px */
+        top: 20vh;            
         width: 200px;      /* 根據需要調整寬度 */
         background-color: rgba(245, 245, 245, 0.7); /* 可選，為了顯示區域 */
         box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.1); /* 可選，增加陰影效果 */
@@ -26,7 +19,8 @@
         display: flex;
         flex-direction: column;
         padding: 20px;
-        height: 60%;
+        height: 70%;
+        border-left: solid 7px rgba(62, 61, 61, 0.585);
     }
 
     .listBox::-webkit-scrollbar {
@@ -42,7 +36,9 @@
 </style>
 
 <div class="listBox">
-    {#each voc.words as w}
-        <p>{w.word}</p>
-    {/each}
+    {#if voc && voc.length > 0}
+        {#each voc as word}
+            <p>{word.word}</p>
+        {/each}
+    {/if}
 </div>

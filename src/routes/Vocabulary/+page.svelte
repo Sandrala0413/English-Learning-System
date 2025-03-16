@@ -1,6 +1,6 @@
 <script>
     import SideMenu from "$lib/sideMenu/SideMenu.svelte";
-    import { addBox, inputBox, addBtn, vocListBox, card } from "./Voabulary.style.js";
+    import { addBox, inputBox, addBtn, vocListBox } from "./Voabulary.style.js";
     import Card from "$lib/card/Card.svelte";
     import RightList from "./RightList.svelte";
 
@@ -23,6 +23,16 @@
   
       location.reload(); // 重新載入頁面
     }
+
+    let filterWords = data.words.filter((/** @type {{ capital: string; }} */ w) => w.capital === "A");
+    /**
+	 * @param {any} letter
+	 */
+    function letterFilter(letter) {
+      filterWords = data.words.filter((/** @type {{ capital: any; }} */ w) => w.capital === letter);
+    }
+
+    $: filterWords;
 </script>
 
 
@@ -38,7 +48,7 @@
     <button on:click={addWord} class={addBtn}>新增</button>
   </div>
 
-{#each data.words as w}
+{#each filterWords.length > 0 ? filterWords : data.words as w}
   <Card
     word = {w.word}
     speech = {w.speech}
@@ -54,10 +64,12 @@
 
 </div>
 
-<SideMenu />
+<SideMenu 
+  letterFilter = {letterFilter}
+/>
 
 <RightList 
-  voc = {data}
+  voc = {filterWords}
 />
 
 
