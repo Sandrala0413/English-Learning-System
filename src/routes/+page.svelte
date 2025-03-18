@@ -1,7 +1,7 @@
 <script>
     import Card from "$lib/card/Card.svelte";
-    import Qrcode from "$lib/qrcode/Qrcode.svelte"
-    import Qrcode_scanner from "$lib/qrcode_scanner/Qrcode_scanner.svelte"
+    // import Qrcode from "$lib/qrcode/Qrcode.svelte"
+    // import Qrcode_scanner from "$lib/qrcode_scanner/Qrcode_scanner.svelte"
 
     export let data;
     const randomIndex = Math.floor(Math.random() * data.words.length);
@@ -19,7 +19,7 @@
         customStar = "position: absolute; top: 15px; right: 15px;"
     />
 
-    <Qrcode/>
+    <!-- <Qrcode/> -->
 </div>
 
 <!-- <Qrcode_scanner/> -->
