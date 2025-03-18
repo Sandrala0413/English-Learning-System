@@ -1,19 +1,19 @@
 <script>
-    
+    export let letterFilter;
     export let menuItem = [
-        { icon: "fa-regular fa-a", link: "/" },{ icon: "fa-regular fa-b", link: "" },
-        { icon: "fa-regular fa-c", link: "" },{ icon: "fa-regular fa-d", link: "" },
-        { icon: "fa-regular fa-e", link: "" },{ icon: "fa-regular fa-f", link: "" },
-        { icon: "fa-regular fa-g", link: "" },{ icon: "fa-regular fa-h", link: "" },
-        { icon: "fa-regular fa-i", link: "" },{ icon: "fa-regular fa-j", link: "" },
-        { icon: "fa-regular fa-k", link: "" },{ icon: "fa-regular fa-l", link: "" },
-        { icon: "fa-regular fa-m", link: "" },{ icon: "fa-regular fa-n", link: "" },
-        { icon: "fa-regular fa-o", link: "" },{ icon: "fa-regular fa-p", link: "" },
-        { icon: "fa-regular fa-q", link: "" },{ icon: "fa-regular fa-r", link: "" },
-        { icon: "fa-regular fa-s", link: "" },{ icon: "fa-regular fa-t", link: "" },
-        { icon: "fa-regular fa-u", link: "" },{ icon: "fa-regular fa-v", link: "" },
-        { icon: "fa-regular fa-w", link: "" },{ icon: "fa-regular fa-x", link: "" },
-        { icon: "fa-regular fa-y", link: "" },{ icon: "fa-regular fa-z", link: "" },
+        { icon: "fa-regular fa-a", letter: "A" },{ icon: "fa-regular fa-b", letter: "B" },
+        { icon: "fa-regular fa-c", letter: "C" },{ icon: "fa-regular fa-d", letter: "D" },
+        { icon: "fa-regular fa-e", letter: "E" },{ icon: "fa-regular fa-f", letter: "F" },
+        { icon: "fa-regular fa-g", letter: "G" },{ icon: "fa-regular fa-h", letter: "H" },
+        { icon: "fa-regular fa-i", letter: "I" },{ icon: "fa-regular fa-j", letter: "J" },
+        { icon: "fa-regular fa-k", letter: "K" },{ icon: "fa-regular fa-l", letter: "L" },
+        { icon: "fa-regular fa-m", letter: "M" },{ icon: "fa-regular fa-n", letter: "N" },
+        { icon: "fa-regular fa-o", letter: "O" },{ icon: "fa-regular fa-p", letter: "P" },
+        { icon: "fa-regular fa-q", letter: "Q" },{ icon: "fa-regular fa-r", letter: "R" },
+        { icon: "fa-regular fa-s", letter: "S" },{ icon: "fa-regular fa-t", letter: "T" },
+        { icon: "fa-regular fa-u", letter: "U" },{ icon: "fa-regular fa-v", letter: "V" },
+        { icon: "fa-regular fa-w", letter: "W" },{ icon: "fa-regular fa-x", letter: "X" },
+        { icon: "fa-regular fa-y", letter: "Y" },{ icon: "fa-regular fa-z", letter: "Z" },
     ];
 </script>
 
@@ -21,7 +21,7 @@
     .side-menu {
         position: fixed;
         left: 0;
-        top: 60%;
+        top: 57vh;
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;
@@ -61,7 +61,7 @@
 
 <nav class="side-menu">
     {#each menuItem as item}
-        <a class="menu-item" href={item.link}>
+        <a class="menu-item" on:click={() => letterFilter(item.letter)}>
             <i class={item.icon} style="margin-right: 10px;"></i>
         </a>
     {/each}

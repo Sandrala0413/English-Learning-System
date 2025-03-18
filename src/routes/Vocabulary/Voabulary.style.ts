@@ -29,7 +29,7 @@ export const addBtn = css({
     '&::before': {
         content: "''",
         width: "0",
-        height: "3em",
+        height: "2em",
         borderRadius: "30em",
         position: "absolute",
         top: "0",

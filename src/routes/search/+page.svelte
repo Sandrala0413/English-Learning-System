@@ -2,6 +2,8 @@
     import Card from "$lib/card/Card.svelte";
     import { onMount, onDestroy } from "svelte"
 	import { notFindBox, notFindWord } from "./search.style";
+    import Gemini_ans from "$lib/gemini_ans/Gemini_ans.svelte";
+    import { browser } from '$app/environment';
 
     // 定義單字物件的型別
     type Word = {
@@ -14,15 +16,17 @@
         };
 
     export let data: { words: Word[] } = { words: [] };
-    let url = new URL(window.location.href);
+    let url: URL = new URL(window.location.href);
     let  targetWord = url.searchParams.get('q') || '';
     let word: Word | undefined;
 
-    $: word = data.words?.find((w: Word) => w.word == targetWord);
+    $: word = data.words?.find((w: Word) => w.word.toLowerCase() == targetWord.toLowerCase());
     
     function search(event: KeyboardEvent){
-        url = new URL(window.location.href);
-        targetWord = url.searchParams.get('q') || '';
+        if (browser) {
+            url = new URL(window.location.href);
+            targetWord = url.searchParams.get('q') || '';
+        }
     }
 
     onMount( () => {
@@ -42,6 +46,9 @@
         define={word?.define}
         sentence={word?.sentence}
     />
+    <!-- <Gemini_ans
+        prompt = {`Please generate synonyms, antonyms, and key points related to ${word?.word || "the word"}`}
+    /> -->
 {:else}
     <div class={notFindBox}>
         <p class={notFindWord}>找不到該單字</p>

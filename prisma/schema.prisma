@@ -15,11 +15,35 @@ datasource db {
 
 model Word {
   id        Int     @id @default(autoincrement())
-  word      String
+  word      String  @db.VarChar(255)
   speech    String
-  audio_src String?
+  audio_src String? @db.VarChar(255)
   pronounce String?
-  define    String
-  sentence  String?
+  define    String @db.VarChar(255)
+  sentence  String? @db.VarChar(255)
   capital   String  @default("")
+
+  favorites  FavoriteWords[]
+}
+
+
+model Account {
+  id         Int     @id @default(autoincrement())
+  username   String  @unique
+  password   String
+  creat_time  DateTime @default(now())
+
+  favorites  FavoriteWords[]
+}
+
+
+model FavoriteWords {
+  userId   Int
+  wordId   Int
+  creatTime DateTime @default(now())
+
+  user   Account @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word   Word    @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@id([userId, wordId]) 
 }
