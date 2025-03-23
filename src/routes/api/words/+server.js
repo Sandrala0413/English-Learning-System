@@ -3,6 +3,7 @@ import prisma from '$lib/prisma';
 //get data from database
 export async function GET() {
     const words = await prisma.word.findMany();
+    console.log("words", words)
     return new Response(JSON.stringify(words), {
         headers: { 'Content-Type': 'application/json' }
     });

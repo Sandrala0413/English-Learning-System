@@ -2,7 +2,6 @@
     import Card from "$lib/card/Card.svelte";
     import { onMount, onDestroy } from "svelte"
 	import { notFindBox, notFindWord } from "./search.style";
-    import Gemini_ans from "$lib/gemini_ans/Gemini_ans.svelte";
     import { browser } from '$app/environment';
 
     // 定義單字物件的型別
@@ -46,9 +45,6 @@
         define={word?.define}
         sentence={word?.sentence}
     />
-    <!-- <Gemini_ans
-        prompt = {`Please generate synonyms, antonyms, and key points related to ${word?.word || "the word"}`}
-    /> -->
 {:else}
     <div class={notFindBox}>
         <p class={notFindWord}>找不到該單字</p>
