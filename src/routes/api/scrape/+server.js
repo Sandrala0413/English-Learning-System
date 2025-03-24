@@ -16,7 +16,8 @@ export async function GET() {
             where: {
                 OR:[
                     { audio_src: null }, // 如果是 null 就更新
-                    { audio_src: "" } // 如果是空字串也更新
+                    { audio_src: "" }, // 如果是空字串也更新
+                    { audio_src: "URL" }
                 ]
             },
             select: {id: true, word: true}

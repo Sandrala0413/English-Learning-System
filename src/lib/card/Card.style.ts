@@ -15,7 +15,15 @@ export const card = css({
         transform: "scale(1.05)", // 滑鼠懸停時放大
         background: "rgba(245, 245, 245, 0.7)",
         boxShadow: "20px 10px 10px rgba(0, 0, 0, 0.5)"
-    }
+    },
+
+    // "@media (max-width: 1024px)": {
+    //     width: "75%", // 手機，讓它滿版
+    // },
+
+    "@media (max-width: 768px)": {
+        width: "90%", // 手機，讓它滿版
+    },
 })
 
 export const wordCss = css({

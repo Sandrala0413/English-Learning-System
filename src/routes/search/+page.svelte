@@ -2,6 +2,7 @@
     import Card from "$lib/card/Card.svelte";
     import { onMount, onDestroy } from "svelte"
 	import { notFindBox, notFindWord } from "./search.style";
+    import { browser } from '$app/environment';
 
     // 定義單字物件的型別
     type Word = {
@@ -14,15 +15,17 @@
         };
 
     export let data: { words: Word[] } = { words: [] };
-    let url = new URL(window.location.href);
+    let url: URL = new URL(window.location.href);
     let  targetWord = url.searchParams.get('q') || '';
     let word: Word | undefined;
 
-    $: word = data.words?.find((w: Word) => w.word == targetWord);
+    $: word = data.words?.find((w: Word) => w.word.toLowerCase() == targetWord.toLowerCase());
     
     function search(event: KeyboardEvent){
-        url = new URL(window.location.href);
-        targetWord = url.searchParams.get('q') || '';
+        if (browser) {
+            url = new URL(window.location.href);
+            targetWord = url.searchParams.get('q') || '';
+        }
     }
 
     onMount( () => {

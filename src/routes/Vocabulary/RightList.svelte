@@ -8,7 +8,7 @@
     .listBox{
         position: fixed;   /* 固定位置 */
         right: 5vw;          /* 距離右側 0px */
-        top: 20vh;            
+        top: 30vh;            
         width: 200px;      /* 根據需要調整寬度 */
         background-color: rgba(245, 245, 245, 0.7); /* 可選，為了顯示區域 */
         box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.1); /* 可選，增加陰影效果 */
@@ -19,7 +19,7 @@
         display: flex;
         flex-direction: column;
         padding: 20px;
-        height: 70%;
+        height: 60%;
         border-left: solid 7px rgba(62, 61, 61, 0.585);
     }
 
@@ -32,6 +32,12 @@
         font-weight: 500;
         color: rgba(0, 0, 0, 0.848);
         font-size: 20px;
+    }
+
+    @media(max-width: 900px){
+        .listBox{
+            display: none;
+        }
     }
 </style>
 

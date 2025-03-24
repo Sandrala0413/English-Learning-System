@@ -3,6 +3,7 @@ import { css } from "../../stitches.config";
 export const addBox = css({
     display: "inline-flex",
     alignItems: "center",
+    flexWrap: "wrap",
     justifyContent: "flex-start",
     // marginLeft: "10%",
     gap: "20px"
@@ -49,6 +50,7 @@ export const vocListBox = css({
     flexDirection: "column",
     marginLeft: "10%",
     gap: "15px",
+
 })
 
 export const card = css({

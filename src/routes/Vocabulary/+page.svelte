@@ -58,7 +58,7 @@
     <!-- <input class={inputBox} bind:value={audio_src} placeholder="發音音檔" /> -->
     <input class={inputBox} bind:value={pronounce} placeholder="kk音標" />
     <input class={inputBox} bind:value={define} placeholder="單字解釋" />
-    <!-- <input class={inputBox} bind:value={sentence} placeholder="句子"/> -->
+    <input class={inputBox} bind:value={sentence} placeholder="句子"/>
     <button on:click={addWord} class={addBtn}>新增</button>
   </div>
 
@@ -70,8 +70,8 @@
     pronounce = {w.pronounce}
     define = {w.define}
     sentence = {w.sentence}
-    customCardStyle = "margin: 0; flex-direction: row; gap: 100px; width: 65vw;"
-    customVocBox = "width: 150px;"
+    customCardStyle = "margin: 0; flex-direction: row; align-items: center; "
+    customVocBox = "min-width: 35%;word-wrap: break-word;"
     wordId = {w.id}
   />
 {/each}

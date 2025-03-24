@@ -63,11 +63,11 @@
         <p class={defineBox}>例句</p>
         <p class={sentenceCss}>{sentence}</p>
     </div>
-    <div class={starIcon} style={customStar}>
+    <!-- <div class={starIcon} style={customStar}>
         {#if starClick}
             <i class="fa-solid fa-star" on:click={toggleFavorite}></i>
         {:else}
             <i class="fa-regular fa-star" on:click={toggleFavorite}></i>
         {/if}
-    </div>
+    </div> -->
 </div>
