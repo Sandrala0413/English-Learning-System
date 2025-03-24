@@ -15,13 +15,22 @@
   
     async function addWord() {
       const capital = word.charAt(0).toUpperCase();
-      await fetch("/api/words", {
+
+      const response = await fetch("/api/words", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ word, speech, audio_src, pronounce, define, sentence, capital})
       });
-  
-      location.reload(); // 重新載入頁面
+      
+      if(response.ok){
+        await updateAudio();
+        location.reload(); // 重新載入頁面
+      }
+      else{
+        console.error("❌ 新增單字失敗");
+        alert("新增失敗，請檢查輸入");
+      }
+      
     }
 
     let filterWords = data.words.filter((/** @type {{ capital: string; }} */ w) => w.capital === "A");
@@ -33,6 +42,11 @@
     }
 
     $: filterWords;
+
+    async function updateAudio() {
+      const res = await fetch("/api/scrape");
+      alert(await res.text());
+    }
 </script>
 
 
@@ -57,7 +71,8 @@
     define = {w.define}
     sentence = {w.sentence}
     customCardStyle = "margin: 0; flex-direction: row; gap: 100px; width: 65vw;"
-    customVocBox = "width: 120px;"
+    customVocBox = "width: 150px;"
+    wordId = {w.id}
   />
 {/each}
 

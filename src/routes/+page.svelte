@@ -14,4 +14,5 @@
     sentence = {word.sentence}
     customCardStyle = "position: relative;"
     customStar = "position: absolute; top: 15px; right: 15px;"
+    wordId = {word.id}
 />

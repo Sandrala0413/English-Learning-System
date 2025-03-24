@@ -9,6 +9,7 @@ export async function GET() {
 }
 
 //write data to database
+// @ts-ignore
 export async function POST({ request }) {
     const { word, speech, audio_src, pronounce, define, sentence, capital } = await request.json();
 

@@ -38,8 +38,8 @@ model Account {
 
 
 model FavoriteWords {
-  userId   Int
-  wordId   Int
+  userId   Int @map("user_id") 
+  wordId   Int @map("word_id") 
   creatTime DateTime @default(now())
 
   user   Account @relation(fields: [userId], references: [id], onDelete: Cascade)
