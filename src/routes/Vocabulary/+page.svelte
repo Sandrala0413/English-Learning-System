@@ -45,7 +45,7 @@
 
     async function updateAudio() {
       const res = await fetch("/api/scrape");
-      alert(await res.text());
+      // alert(await res.text());
     }
 </script>
 
