@@ -1,6 +1,9 @@
 <script>
+    import { onMount } from "svelte";
     import {card, wordCss, speechCss, pronounceBox, pronounceCss, defineCss, 
         sentenceCss, defineBox, starIcon} from "./Card.style";
+    import { userId, favoriteWords } from "$lib/store";
+    // import { get } from "svelte/store";
 
     export let word = "單字";
     export let speech = "詞性";
@@ -18,9 +21,30 @@
         audio.play();
     }
 
+   
+
+    // let userId;
+
+    /**
+	 * @type {any}
+	 */
+     export let wordId;
+    let isFavorite = false;
+    $: isFavorite = $favoriteWords.has(wordId);
+
     let starClick = false;
-    function starIconClick(){
+    function toggleFavorite(){
         starClick = !starClick;
+        favoriteWords.update((favs) => {
+            const newFavs = new Set(favs);
+            if (newFavs.has(wordId)) {
+                newFavs.delete(wordId); // 如果已經收藏，則移除
+            } else {
+                newFavs.add(wordId); // 如果未收藏，則添加
+            }
+            console.log(newFavs);
+            return newFavs; // 返回新的 Set
+        });
     }
 </script>
 
@@ -39,11 +63,11 @@
         <p class={defineBox}>例句</p>
         <p class={sentenceCss}>{sentence}</p>
     </div>
-    <div class={starIcon} style={customStar}>
+    <!-- <div class={starIcon} style={customStar}>
         {#if starClick}
-            <i class="fa-solid fa-star" on:click={starIconClick}></i>
+            <i class="fa-solid fa-star" on:click={toggleFavorite}></i>
         {:else}
-            <i class="fa-regular fa-star" on:click={starIconClick}></i>
+            <i class="fa-regular fa-star" on:click={toggleFavorite}></i>
         {/if}
-    </div>
+    </div> -->
 </div>

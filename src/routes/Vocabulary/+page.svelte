@@ -15,13 +15,22 @@
   
     async function addWord() {
       const capital = word.charAt(0).toUpperCase();
-      await fetch("/api/words", {
+
+      const response = await fetch("/api/words", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ word, speech, audio_src, pronounce, define, sentence, capital})
       });
-  
-      location.reload(); // 重新載入頁面
+      
+      if(response.ok){
+        await updateAudio();
+        location.reload(); // 重新載入頁面
+      }
+      else{
+        console.error("❌ 新增單字失敗");
+        alert("新增失敗，請檢查輸入");
+      }
+      
     }
 
     let filterWords = data.words.filter((/** @type {{ capital: string; }} */ w) => w.capital === "A");
@@ -33,6 +42,11 @@
     }
 
     $: filterWords;
+
+    async function updateAudio() {
+      const res = await fetch("/api/scrape");
+      alert(await res.text());
+    }
 </script>
 
 
@@ -44,7 +58,7 @@
     <!-- <input class={inputBox} bind:value={audio_src} placeholder="發音音檔" /> -->
     <input class={inputBox} bind:value={pronounce} placeholder="kk音標" />
     <input class={inputBox} bind:value={define} placeholder="單字解釋" />
-    <!-- <input class={inputBox} bind:value={sentence} placeholder="句子"/> -->
+    <input class={inputBox} bind:value={sentence} placeholder="句子"/>
     <button on:click={addWord} class={addBtn}>新增</button>
   </div>
 
@@ -56,8 +70,9 @@
     pronounce = {w.pronounce}
     define = {w.define}
     sentence = {w.sentence}
-    customCardStyle = "margin: 0; flex-direction: row; gap: 100px; width: 65vw;"
-    customVocBox = "width: 120px;"
+    customCardStyle = "margin: 0; flex-direction: row; align-items: center; "
+    customVocBox = "min-width: 35%;word-wrap: break-word;"
+    wordId = {w.id}
   />
 {/each}
 

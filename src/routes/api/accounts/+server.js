@@ -5,16 +5,6 @@ import prisma from '$lib/prisma';
 export async function POST({ request }) {
     const { username, password } = await request.json();
 
-    // try {
-    //     const newAccount = await prisma.account.create({
-    //         data: { username, password }
-    //     });
-    //     return new Response(JSON.stringify(newAccount), { status: 201 });
-    // } catch (error) {
-    //     console.error("資料庫錯誤:", error); //record error
-    //     return new Response(JSON.stringify({ error: "新增失敗" }), { status: 500 });
-    // }
-
     try {
         const existingUser = await prisma.account.findUnique({
             where: { username }
@@ -23,7 +13,7 @@ export async function POST({ request }) {
         if (existingUser) {
             // 帳號已存在，檢查密碼是否正確
             if (existingUser.password === password) {
-                return new Response(JSON.stringify({ message: "登入成功" }), { status: 200 });
+                return new Response(JSON.stringify({ message: "登入成功", user: existingUser }), { status: 200 });
             } else {
                 return new Response(JSON.stringify({ error: "密碼錯誤" }), { status: 401 });
             }

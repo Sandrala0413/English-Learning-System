@@ -15,9 +15,9 @@ model account {
   favoritewords favoritewords[]
 }
 
-model favoritewords {
-  userId    Int
-  wordId    Int
+model FavoriteWords {
+  userId   Int @map("user_id") 
+  wordId   Int @map("word_id") 
   creatTime DateTime @default(now())
   account   account  @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FavoriteWords_userId_fkey")
   word      word     @relation(fields: [wordId], references: [id], onDelete: Cascade, map: "FavoriteWords_wordId_fkey")
