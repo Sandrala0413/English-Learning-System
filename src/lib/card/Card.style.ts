@@ -28,7 +28,7 @@ export const card = css({
 
 export const wordCss = css({
     fontWeight: "800",
-    fontSize: "30px",
+    fontSize: "2vw",
 
 })
 
@@ -49,7 +49,7 @@ export const pronounceCss = css({
 })
 
 export const defineCss = css({
-    fontSize: "20px",
+    fontSize: "1.2vw",
     padding: "5px"
 })
 
@@ -65,7 +65,7 @@ export const defineBox = css({
 })
 
 export const sentenceCss = css({
-    fontSize: "20px",
+    fontSize: "1.2vw",
     padding: "5px"
 })
 
@@ -74,6 +74,6 @@ export const starIcon = css({
     marginLeft: "auto",
     justifyContent: "flex-end",
     color: " rgb(243, 213, 93)",
-    fontSize: "25px",
+    fontSize: "2.5vw",
 
 })

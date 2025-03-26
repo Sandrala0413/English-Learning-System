@@ -1,6 +1,6 @@
 <script>
     import Card from "$lib/card/Card.svelte";
-    // import Qrcode from "$lib/qrcode/Qrcode.svelte"
+    import Qrcode from "$lib/qrcode/Qrcode.svelte"
     // import Qrcode_scanner from "$lib/qrcode_scanner/Qrcode_scanner.svelte"
 
     export let data;
@@ -20,7 +20,7 @@
         define = {word1.define}
         sentence = {word1.sentence}
         customCardStyle = "height: 60vh;"
-    wordId = {word1.id}
+        wordId = {word1.id}
     />
 
     <Card 
@@ -31,7 +31,7 @@
         define = {word2.define}
         sentence = {word2.sentence}
         customCardStyle = "height: 60vh;"
-    wordId = {word2.id}
+        wordId = {word2.id}
     />
 
     <Card 
@@ -42,11 +42,10 @@
         define = {word3.define}
         sentence = {word3.sentence}
         customCardStyle = "height: 60vh;"
-
-    wordId = {word3.id}
+        wordId = {word3.id}
     />
 
-    <!-- <Qrcode/> -->
+    <Qrcode/>
 </div>
 
 <!-- <Qrcode_scanner/> -->

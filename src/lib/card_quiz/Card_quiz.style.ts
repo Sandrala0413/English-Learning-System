@@ -25,7 +25,7 @@ export const speechCss = css({
 })
 
 export const defineCss = css({
-    fontSize: "20px",
+    fontSize: "1.2vw",
     padding: "5px"
 })
 
@@ -55,7 +55,7 @@ export const Btn = css({
     // marginLeft: "10px",
     height: "2em",
     borderRadius: "30em",
-    fontSize: "15px",
+    fontSize: "1vw",
     color: "rgb(251, 250, 251)",
     fontWeight: "700",
     border: "none",

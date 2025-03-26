@@ -21,9 +21,9 @@ function logInPageToggle() {
     showLogin = !showLogin;
 }
 
-let username = "";
-let password = "";
-async function addAccount() {
+export let username = "";
+export let password = "";
+export async function addAccount() {
     if (!username || !password) {
         alert("請輸入帳號和密碼");
         return;

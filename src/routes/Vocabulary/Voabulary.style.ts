@@ -11,7 +11,7 @@ export const addBox = css({
 
 export const inputBox = css({
     borderRadius: "7px",
-
+    fontSize: "1vw"
 })
 
 export const addBtn = css({
@@ -19,7 +19,7 @@ export const addBtn = css({
     // marginLeft: "10px",
     height: "2em",
     borderRadius: "30em",
-    fontSize: "15px",
+    fontSize: "1vw",
     color: "rgb(251, 250, 251)",
     fontWeight: "700",
     border: "none",

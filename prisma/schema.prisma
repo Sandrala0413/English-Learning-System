@@ -7,26 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model account {
+model Account {
   id            Int             @id @default(autoincrement())
   username      String          @unique(map: "Account_username_key")
   password      String
   creat_time    DateTime        @default(now())
-  favoritewords favoritewords[]
+  favoritewords FavoriteWords[]
 }
 
 model FavoriteWords {
-  userId   Int @map("user_id") 
-  wordId   Int @map("word_id") 
+  userId    Int      @map("user_id")
+  wordId    Int      @map("word_id")
   creatTime DateTime @default(now())
-  account   account  @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FavoriteWords_userId_fkey")
-  word      word     @relation(fields: [wordId], references: [id], onDelete: Cascade, map: "FavoriteWords_wordId_fkey")
+  account   Account  @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FavoriteWords_userId_fkey")
+  word      Word     @relation(fields: [wordId], references: [id], onDelete: Cascade, map: "FavoriteWords_wordId_fkey")
 
   @@id([userId, wordId])
   @@index([wordId], map: "FavoriteWords_wordId_fkey")
 }
 
-model word {
+model Word {
   id            Int             @id @default(autoincrement())
   word          String          @db.VarChar(255)
   audio_src     String?         @db.VarChar(255)
@@ -35,5 +35,5 @@ model word {
   sentence      String?         @db.VarChar(255)
   speech        String
   capital       String          @default("")
-  favoritewords favoritewords[]
+  favoritewords FavoriteWords[]
 }

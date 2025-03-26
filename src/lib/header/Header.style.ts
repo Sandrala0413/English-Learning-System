@@ -2,8 +2,8 @@ import { css } from '../../stitches.config';
 
 export const headerBtn = css({
     color: "white",
-    fontSize: "20px",
-    padding: "20px",
+    fontSize: "1.5vw",
+    padding: "1vw",
     fontWeight: "900"
 })
 
@@ -11,13 +11,13 @@ export const headerBar = css({
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    padding: "30px",
-    marginLeft: "25px"
+    padding: "3%",
+    marginLeft: "2.5%"
 })
 
 export const logoImg = css({
-    width: "60px",
-    height: "60px",
+    width: "50px",
+    height: "50px",
     borderRadius: "50%"
 })
 
@@ -25,9 +25,9 @@ export const searchBar = css({
     borderRadius: "20px",
     width: "15vw",
     height: "5vh",
-    border: "2px solid #ccc",
-    padding: "10px",
-    margin: "10px"
+    border: "0.2vw solid #ccc",
+    padding: "5%",
+    margin: "5%"
 })
 
 export const logInBtn = css({
@@ -53,7 +53,7 @@ export const logInBtn = css({
     cursor: 'pointer',
     color: 'rgba(255, 255, 255, 0.9)',
     transition: 'all 1000ms',
-    fontSize: '15px',
+    fontSize: '1.3vw',
     position: 'relative',
     overflow: 'hidden',
     outline: '2px solidrgba(255, 255, 255, 0.9)',
@@ -117,7 +117,7 @@ export const inputBox = css({
 export const userIcon = css({
     borderRadius: "60%",
     background: "rgb(255, 255, 255)",
-    fontSize: "40px",
+    fontSize: "2vw",
     padding: "13px"
 })
 
@@ -136,7 +136,7 @@ export const logInPageBtn = css({
     width: "5em",
     height: "2em",
     borderRadius: "30em",
-    fontSize: "15px",
+    fontSize: "1vw",
     color: "rgb(251, 250, 251)",
     fontWeight: "700",
     border: "none",

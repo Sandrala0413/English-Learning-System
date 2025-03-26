@@ -31,7 +31,7 @@
     p{
         font-weight: 500;
         color: rgba(0, 0, 0, 0.848);
-        font-size: 20px;
+        font-size: 1.5vw;
     }
 
     @media(max-width: 900px){
