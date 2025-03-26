@@ -11,7 +11,7 @@ export const headerBar = css({
     justifyContent: "flex-start",
     alignItems: "center",
     padding: "3rem",
-    marginLeft: "2.5%",
+    // marginLeft: "2.5%",
     gap: "2rem"
 })
 
@@ -35,7 +35,7 @@ export const logInBtn = css({
     marginLeft: "auto",
     // flexGrow: 1,
     justifyContent: "flex-end",
-    marginRight: "1rem",
+    // marginRight: "1rem",
     // borderRadius: "5px",
     // background: " #c5d5fa",
     // fontSize: "20px",
