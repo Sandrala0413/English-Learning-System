@@ -1,6 +1,9 @@
 <script>
+// @ts-nocheck
+
     import Card from "$lib/card/Card.svelte";
     import Qrcode from "$lib/qrcode/Qrcode.svelte"
+	// import { Html5QrcodeResultFactory } from "html5-qrcode/esm/core.js";
     // import Qrcode_scanner from "$lib/qrcode_scanner/Qrcode_scanner.svelte"
 
     export let data;
@@ -8,6 +11,11 @@
     const word1 = data.words[Math.floor(Math.random() * data.words.length)];
     const word2 = data.words[Math.floor(Math.random() * data.words.length)];
     const word3 = data.words[Math.floor(Math.random() * data.words.length)];
+
+    let qrcodeClick = false;
+    function qrcodeGenerate(){
+        qrcodeClick = !qrcodeClick;
+    }
 </script>
 
 
@@ -45,8 +53,18 @@
         wordId = {word3.id}
     />
 
-    <Qrcode/>
 </div>
+
+<div class="qrcode_container">
+{#if qrcodeClick}
+    <Qrcode/>
+    <button on:click={qrcodeGenerate} class="btn">Close</button>
+{:else}
+    <button on:click={qrcodeGenerate} class="btn">Generate Qrcode</button>
+{/if}
+</div>
+
+
 
 <!-- <Qrcode_scanner/> -->
 
@@ -57,6 +75,19 @@
         align-items: center;
         /* margin: 5px; */
         gap: 5px;
+    }
+
+    .qrcode_container{
+        display: flex;
+        margin: auto;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .btn{
+        background-color: azure;
+        border-radius: 5px;
+        padding: 1rem;
     }
 
     @media(max-width: 900px){

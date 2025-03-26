@@ -12,7 +12,8 @@ export const headerBar = css({
     alignItems: "center",
     padding: "3rem",
     // marginLeft: "2.5%",
-    gap: "2rem"
+    gap: "2rem",
+    flexWrap: "wrap"
 })
 
 export const logoImg = css({
@@ -27,14 +28,20 @@ export const searchBar = css({
     height: "5vh",
     border: "0.2vw solid #ccc",
     padding: "5%",
-    margin: "5%"
+    margin: "5%",
+
+    '@media (max-width: 700px)': {
+        width: "40vw",  // 讓搜尋欄在小螢幕時變寬
+        margin: "10px auto",  // 水平置中
+
+    }
 })
 
 export const logInBtn = css({
     display: "inline-flex",
-    marginLeft: "auto",
+    // marginLeft: "auto",
     // flexGrow: 1,
-    justifyContent: "flex-end",
+    // justifyContent: "flex-end",
     // marginRight: "1rem",
     // borderRadius: "5px",
     // background: " #c5d5fa",
@@ -117,7 +124,7 @@ export const inputBox = css({
 export const userIcon = css({
     borderRadius: "60%",
     background: "rgb(255, 255, 255)",
-    fontSize: "2vw",
+    fontSize: "2rem",
     padding: "13px"
 })
 
@@ -133,10 +140,11 @@ export const logInPageBtn = css({
     // '&:hover': {
     //     background: " #adc2f3", /* 深一點的藍色 */
     // }
+
     width: "5em",
     height: "2em",
     borderRadius: "30em",
-    fontSize: "1vw",
+    fontSize: "1rem",
     color: "rgb(251, 250, 251)",
     fontWeight: "700",
     border: "none",
