@@ -2,8 +2,7 @@ import { css } from '../../stitches.config';
 
 export const headerBtn = css({
     color: "white",
-    fontSize: "1.5vw",
-    padding: "1vw",
+    fontSize: "1.3rem",
     fontWeight: "900"
 })
 
@@ -11,13 +10,14 @@ export const headerBar = css({
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    padding: "3%",
-    marginLeft: "2.5%"
+    padding: "3rem",
+    marginLeft: "2.5%",
+    gap: "2rem"
 })
 
 export const logoImg = css({
-    width: "50px",
-    height: "50px",
+    width: "3.5rem",
+    height: "3.5rem",
     borderRadius: "50%"
 })
 
@@ -35,7 +35,7 @@ export const logInBtn = css({
     marginLeft: "auto",
     // flexGrow: 1,
     justifyContent: "flex-end",
-    marginRight: "5vw",
+    marginRight: "1rem",
     // borderRadius: "5px",
     // background: " #c5d5fa",
     // fontSize: "20px",
@@ -53,7 +53,7 @@ export const logInBtn = css({
     cursor: 'pointer',
     color: 'rgba(255, 255, 255, 0.9)',
     transition: 'all 1000ms',
-    fontSize: '1.3vw',
+    fontSize: '1.3rem',
     position: 'relative',
     overflow: 'hidden',
     outline: '2px solidrgba(255, 255, 255, 0.9)',

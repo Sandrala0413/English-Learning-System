@@ -82,7 +82,7 @@ async function loadFavorite(userId: number) {
     <a href="/"><img class={logoImg} src="https://i.imgur.com/MPEsTPo.jpg" alt="logo"></a>
     <a class={headerBtn} href="/Vocabulary">單字簿</a>
     <a class={headerBtn} href="/Quiz">測驗</a>
-    <a class={headerBtn} href="/Favorite">收藏夾</a>
+    <!-- <a class={headerBtn} href="/Favorite">收藏夾</a> -->
     <form >
         <input class={searchBar} type="text" bind:value={targetWord} placeholder="搜尋..." on:keydown={handleKeyDown}>
         <!-- <button on:click={}><i class="fa-solid fa-magnifying-glass"></i></button> -->
